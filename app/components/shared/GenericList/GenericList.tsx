@@ -3,6 +3,8 @@ import React, { ComponentProps, ElementType } from 'react';
 interface IListProps {
   value: React.ReactNode;
   id: string;
+  image?: string;
+  link?: string | string[];
 }
 
 interface IListOwnProps<E extends ElementType = ElementType> {

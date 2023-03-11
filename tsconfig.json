@@ -24,7 +24,8 @@
       "@/*": ["*"],
       "@/svg/*": ["public/svg/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/shared/*": ["components/shared/*"]
+      "@/shared/*": ["components/shared/*"],
+      "@/utils/*": ["utils/*"]
       
     }
   },

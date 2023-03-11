@@ -27,10 +27,17 @@ export default function UserBlock() {
       <Dropdown
         triggerElement={
           <Button>
-            {' '}
             <Image
               priority
               src='/svg/user.svg'
+              height={20}
+              width={20}
+              alt='User menu'
+            />
+            <Image
+              className={styles.dropdown_arrow}
+              priority
+              src='/svg/dropdown-arrow.svg'
               height={20}
               width={20}
               alt='User menu'

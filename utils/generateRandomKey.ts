@@ -1,4 +1,4 @@
-import { nanoid } from '@reduxjs/toolkit';
+import { v4 as uuid } from 'uuid';
 import { assoc } from 'ramda';
 
 export function generateRandomId() {
@@ -6,7 +6,7 @@ export function generateRandomId() {
 }
 
 export function assignRandomId<O extends Object>(obj: O) {
-  return assoc('id', nanoid(), obj);
+  return assoc('id', uuid(), obj);
 }
 
 export function createListObject<T>(item: T) {
