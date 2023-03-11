@@ -1,0 +1,23 @@
+.dropdown_menu {
+  position: absolute;
+  padding-top: 6px;
+  background-color: white;
+  border: 1px solid #edeff1;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown_item {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown_item:hover > svg path {
+  stroke: currentColor;
+}
+
+.dropdown_item:hover {
+  background-color: #0079d3;
+  color: white;
+}

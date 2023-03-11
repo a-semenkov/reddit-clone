@@ -4,8 +4,9 @@ import Button from '../../elements/Button';
 import styles from './UserBlock.module.css';
 
 import Image from 'next/image';
-import Dropdown from '../../shared/Dropdown/Dropdown';
+import { Dropdown } from '@/shared/Dropdown';
 import GenericList from '../../shared/GenericList/GenericList';
+import UserMenuNoAuth from '../UserMenu/UserMenuNoAuth';
 
 const NOOP = () => {};
 export default function UserBlock() {
@@ -45,7 +46,7 @@ export default function UserBlock() {
           </Button>
         }
       >
-        {/* <GenericList  /> */}
+        <UserMenuNoAuth />
       </Dropdown>
     </div>
   );

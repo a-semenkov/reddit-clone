@@ -1,5 +1,3 @@
-'use client';
-
 import { AnimatePresence } from 'framer-motion';
 import useToggle from '@/hooks/useToggle';
 import styles from './dropdown.module.css';
@@ -15,7 +13,7 @@ interface IDropdownProps {
 
 const NOOP = () => {};
 
-function Dropdown({
+export function Dropdown({
   triggerElement,
   children,
   cls,
@@ -42,5 +40,3 @@ function Dropdown({
     </div>
   );
 }
-
-export default Dropdown;

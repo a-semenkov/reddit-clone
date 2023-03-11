@@ -1,42 +1,26 @@
-import GenericList from '../../shared/GenericList/GenericList';
-import { assignRandomId } from '@/utils/generateRandomKey';
+import { AdvertiseIcon, HelpIcon, LoginIcon, MoreIcon } from '@/icons/index';
 
-const USER_MENU_ITEMS = [
-  {
-    value: 'Help Center',
-    image: 'help.svg',
-    link: '#',
-  },
-  {
-    value: 'More',
-    image: 'more.svg',
-    link: [
-      {
-        value: 'Reddit iOS',
-        link: '#',
-      },
-      {
-        value: 'Blog',
-        link: '#',
-      },
-      {
-        value: 'Press',
-        link: '#',
-      },
-    ],
-  },
-  {
-    value: 'Advertise',
-    image: 'adveritise.svg',
-    link: '#',
-  },
-  {
-    value: 'Log In/Sign Up',
-    image: 'login.svg',
-    link: '#',
-  },
-].map((item) => assignRandomId(item));
+import styles from './userMenu.module.css';
 
 export default function UserMenuNoAuth() {
-  return <GenericList list={USER_MENU_ITEMS} />;
+  return (
+    <div className={styles.dropdown_menu}>
+      <div className={styles.dropdown_item}>
+        <HelpIcon />
+        <span>Help Center</span>
+      </div>
+      <div className={styles.dropdown_item}>
+        <MoreIcon />
+        <span>More</span>
+      </div>
+      <div className={styles.dropdown_item}>
+        <AdvertiseIcon />
+        <span>Advertise on Reddit</span>
+      </div>
+      <div className={styles.dropdown_item}>
+        <LoginIcon />
+        <span>Log In / Sign Up</span>
+      </div>
+    </div>
+  );
 }
