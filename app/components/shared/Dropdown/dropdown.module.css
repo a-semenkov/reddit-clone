@@ -1,38 +1,8 @@
-/* .container {
-  width: 100%;
-  flex: 1 1 0;
-}
-
-.listContainer {
-  position: relative;
-}
-
-.list {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-.parent {
-  cursor: pointer;
-  /* position: relative; */
-  z-index: 0;
-  /* top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
-  /* position: relative; */
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  /* z-index: 501; */
+  background-color: rgba(0, 0, 0, 0.2);
 }

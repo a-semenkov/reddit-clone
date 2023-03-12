@@ -14,17 +14,21 @@ export default function UserMenuNoAuth() {
       </div>
       <div className={styles.dropdown_item}>
         <Dropdown
+          cls={styles.nested_dropdown_item}
           triggerElement={
-            <>
+            <div className={styles.nested_header}>
               <MoreIcon />
               <span>More</span>
               <div data-static className={styles.top}></div>
-            </>
+            </div>
           }
+          nested
         >
-          <div>Reddit iOS</div>
-          <div>Reddit Android</div>
-          <div>Reddit Blog</div>
+          <div className={styles.nested_list}>
+            <div className={styles.dropdown_item}>Reddit iOS</div>
+            <div className={styles.dropdown_item}>Reddit Android</div>
+            <div className={styles.dropdown_item}>Reddit Blog</div>
+          </div>
         </Dropdown>
       </div>
       <div className={styles.dropdown_item}>
