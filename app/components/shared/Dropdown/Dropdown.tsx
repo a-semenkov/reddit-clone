@@ -1,24 +1,26 @@
 import { AnimatePresence } from 'framer-motion';
 import useToggle from '@/hooks/useToggle';
 import styles from './dropdown.module.css';
-import { useEffect, useRef } from 'react';
-import { IDropdownProps } from './dropdown.types';
+import { Children, ElementType, useEffect, useRef } from 'react';
+import { DropdownProps } from './dropdown.types';
 
 const NOOP = () => {};
+const defaultElement = 'button';
 
-export function Dropdown({
-  triggerElement,
+export function Dropdown<E extends ElementType>({
+  As,
+  triggerElementContent,
   children,
-  cls,
   nested,
   onOpen = NOOP,
   onClose = NOOP,
   ...other
-}: IDropdownProps) {
+}: DropdownProps<E>) {
   const [isDropdownOpen, toggleDropdown] = useToggle();
 
   useEffect(() => {
     isDropdownOpen ? onOpen() : onClose();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDropdownOpen]);
 
   const handleDropdown = (target: HTMLElement) => {
@@ -26,24 +28,19 @@ export function Dropdown({
 
     toggleDropdown();
   };
-
+  const Tagname = As || defaultElement;
   return (
     <div
-      className={cls}
+      role='button'
       onClick={(e: React.SyntheticEvent<HTMLElement>) =>
         e.target instanceof HTMLElement ? handleDropdown(e.target) : null
       }
-      {...other}
+      className={styles.container}
     >
-      {triggerElement}
-      <AnimatePresence>
-        {isDropdownOpen && (
-          <>
-            {!nested && <div className={styles.backdrop} />}
-            {children}
-          </>
-        )}
-      </AnimatePresence>
+      <Tagname {...other}>{triggerElementContent}</Tagname>
+      {isDropdownOpen && !nested && <div className={styles.backdrop} />}
+
+      <AnimatePresence>{isDropdownOpen && children}</AnimatePresence>
     </div>
   );
 }

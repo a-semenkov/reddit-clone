@@ -1,0 +1,13 @@
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.logo_container > svg:not(:last-child) {
+  margin-right: 8px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}

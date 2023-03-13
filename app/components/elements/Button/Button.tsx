@@ -1,7 +1,7 @@
 import styles from './button.module.css';
 import { IButton } from './button.types';
 
-export default function Button({
+export function Button({
   children,
   primary,
   onClick = () => {},

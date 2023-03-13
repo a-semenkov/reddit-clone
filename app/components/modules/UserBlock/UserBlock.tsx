@@ -1,12 +1,13 @@
 'use client';
 
-import Button from '../../elements/Button';
 import styles from './UserBlock.module.css';
+import ButtonStyles from '@/elements/Button/button.module.css';
 
 import Image from 'next/image';
 import { Dropdown } from '@/shared/Dropdown';
-import GenericList from '../../shared/GenericList/GenericList';
+
 import UserMenuNoAuth from '../UserMenu/UserMenuNoAuth';
+import { Button } from '@/elements/Button/';
 
 const NOOP = () => {};
 export default function UserBlock() {
@@ -25,9 +26,12 @@ export default function UserBlock() {
       <Button primary onClick={NOOP}>
         Log in
       </Button>
+
       <Dropdown
-        triggerElement={
-          <Button>
+        As='button'
+        className={ButtonStyles.button_element}
+        triggerElementContent={
+          <>
             <Image
               priority
               src='/svg/user.svg'
@@ -43,7 +47,7 @@ export default function UserBlock() {
               width={20}
               alt='User menu'
             />
-          </Button>
+          </>
         }
       >
         <UserMenuNoAuth />
@@ -51,3 +55,5 @@ export default function UserBlock() {
     </div>
   );
 }
+
+//

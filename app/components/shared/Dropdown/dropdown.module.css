@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
