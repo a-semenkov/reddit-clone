@@ -1,3 +1,4 @@
+import SearchBar from '../../elements/SearchBar/SearchBar';
 import { LogoIcon } from '../../icons/LogoIcon';
 import { LogoTextIcon } from '../../icons/LogoTextIcon';
 import UserBlock from '../UserBlock/UserBlock';
@@ -10,6 +11,7 @@ export default function Navbar() {
         <LogoIcon />
         <LogoTextIcon />
       </div>
+      <SearchBar />
       <UserBlock />
       {/* 
                 <SelectCategory/>

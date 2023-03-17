@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import useToggle from '@/hooks/useToggle';
 import styles from './dropdown.module.css';
-import { Children, ElementType, useEffect, useRef } from 'react';
+import { ElementType, useEffect, useRef } from 'react';
 import { DropdownProps } from './dropdown.types';
 
 const NOOP = () => {};

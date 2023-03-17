@@ -1,0 +1,22 @@
+.search_wrapper {
+  position: relative;
+  flex-grow: 1;
+  max-width: 650px;
+  height: 40px;
+}
+
+.search {
+  width: 100%;
+}
+
+.search_icon {
+}
+
+@media (max-width: 1250px) {
+  .search_wrapper {
+    margin: 0 16px;
+    flex-grow: 0;
+    width: 400px;
+    max-width: 400px;
+  }
+}
