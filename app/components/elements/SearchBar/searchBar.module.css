@@ -1,15 +1,37 @@
 .search_wrapper {
   position: relative;
   flex-grow: 1;
+  display: flex;
+  align-items: center;
   max-width: 650px;
   height: 40px;
+  /* overflow: hidden; */
 }
 
 .search {
   width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  border-radius: 20px;
+  background-color: var(--grey-color);
+  border: 0;
+  /* outline-color: transparent; */
+}
+.search_icon {
+  position: relative;
+  left: 30px;
 }
 
-.search_icon {
+.search:hover,
+.search:focus,
+.search:active {
+  background-color: unset;
+
+  outline: 1px solid var(--secondary-color);
+}
+
+.search:focus {
+  border-radius: 20px 20px 0px 0px;
 }
 
 @media (max-width: 1250px) {
