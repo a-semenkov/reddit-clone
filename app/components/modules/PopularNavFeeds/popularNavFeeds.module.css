@@ -1,0 +1,17 @@
+/* .dropdown_button {
+  flex-grow: 1;
+  max-width: 270px;
+} */
+
+.popular_dropdown {
+  width: 270px;
+}
+
+.dropdown_button {
+  justify-content: flex-start;
+}
+
+.dropdown_icon {
+  margin-left: auto;
+  fill: currentColor;
+}

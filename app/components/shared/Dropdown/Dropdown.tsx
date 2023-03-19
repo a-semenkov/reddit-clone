@@ -1,9 +1,7 @@
-'use client';
-
 import { AnimatePresence } from 'framer-motion';
 import useToggle from '@/hooks/useToggle';
 import styles from './dropdown.module.css';
-import { ElementType, useEffect, useRef } from 'react';
+import { ElementType, useEffect } from 'react';
 import { DropdownProps } from './dropdown.types';
 
 const NOOP = () => {};
@@ -22,8 +20,7 @@ export function Dropdown<E extends ElementType>({
 
   useEffect(() => {
     isDropdownOpen ? onOpen() : onClose();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isDropdownOpen]);
+  }, [isDropdownOpen, onOpen, onClose]);
 
   const handleDropdown = (target: HTMLElement) => {
     if (!nested && target.getAttribute('data-static')) return;

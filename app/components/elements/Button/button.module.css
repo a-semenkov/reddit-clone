@@ -7,9 +7,18 @@
   font-weight: 700;
   border: none;
   display: flex;
-  justify-content: center;
+
   align-items: center;
   border-radius: 21px;
+}
+
+.button_element[data-dropdown] {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.button_element[data-dropdown]:hover {
+  outline: 1px solid var(--outline);
 }
 
 .button_element > *:not(:last-child) {
@@ -21,7 +30,7 @@
 }
 
 .primary {
-  background-color: #ff4500;
+  background-color: var(--primary-color);
   color: white;
 }
 

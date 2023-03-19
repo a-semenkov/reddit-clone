@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.container > * {
+  width: 100%;
+}
+
 .backdrop {
   position: fixed;
   top: 0;

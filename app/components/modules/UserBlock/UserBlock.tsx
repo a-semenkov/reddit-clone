@@ -29,6 +29,7 @@ export default function UserBlock() {
 
       <Dropdown
         As='button'
+        data-dropdown
         className={ButtonStyles.button_element}
         triggerElementContent={
           <>
