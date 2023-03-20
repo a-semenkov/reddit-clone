@@ -15,3 +15,16 @@
   margin-left: auto;
   fill: currentColor;
 }
+
+.navFeed_menu {
+  position: absolute;
+  overflow: auto;
+  height: 480px;
+  background-color: white;
+}
+
+@media (max-width: 1250px) {
+  .popular_dropdown {
+    display: none;
+  }
+}

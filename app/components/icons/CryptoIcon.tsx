@@ -1,9 +1,8 @@
 import { IconProps } from './icons.types';
 
-export function SearchIcon({ ...props }: IconProps) {
+export function CryptoIcon({ ...props }: IconProps) {
   return (
     <svg
-      fill='none'
       width='20'
       height='20'
       viewBox='0 0 24 24'
@@ -11,9 +10,9 @@ export function SearchIcon({ ...props }: IconProps) {
       {...props}
     >
       <path
-        d='M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z'
+        d='M10 6V4M14 6V4M14 6H7M14 6C15.6569 6 17 7.34315 17 9C17 10.6569 15.6569 12 14 12M9 18L9 12M9 6V12M10 20V18M14 20V18M9 12H15C16.6569 12 18 13.3431 18 15C18 16.6569 16.6569 18 15 18H7'
         stroke='#000000'
-        strokeWidth='1.5'
+        strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'
       />

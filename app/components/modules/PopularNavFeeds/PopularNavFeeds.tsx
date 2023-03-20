@@ -2,6 +2,7 @@ import styles from './popularNavFeeds.module.css';
 import buttonStyles from '@/elements/Button/button.module.css';
 import { DropdownArrowIcon, TrendingIcon } from '@/icons/index';
 import { Dropdown } from '@/shared/Dropdown';
+import PopularFeedsMenu from './PopularFeedsMenu';
 
 export function PopularNavFeeds() {
   return (
@@ -18,9 +19,9 @@ export function PopularNavFeeds() {
           </>
         }
       >
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
+        <div role='menu' className={styles.navFeed_menu}>
+          <PopularFeedsMenu />
+        </div>
       </Dropdown>
     </div>
   );

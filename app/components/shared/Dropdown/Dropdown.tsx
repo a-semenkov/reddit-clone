@@ -22,7 +22,7 @@ export function Dropdown<E extends ElementType>({
     isDropdownOpen ? onOpen() : onClose();
   }, [isDropdownOpen, onOpen, onClose]);
 
-  const handleDropdown = (target: HTMLElement) => {
+  const handleDropdown = (target: Element) => {
     if (!nested && target.getAttribute('data-static')) return;
 
     toggleDropdown();
@@ -31,9 +31,9 @@ export function Dropdown<E extends ElementType>({
   return (
     <div
       role='button'
-      onClick={(e: React.SyntheticEvent<HTMLElement>) =>
-        e.target instanceof HTMLElement ? handleDropdown(e.target) : null
-      }
+      onClick={(e: React.SyntheticEvent<HTMLElement>) => {
+        e.target instanceof Element ? handleDropdown(e.target) : null;
+      }}
       className={styles.container}
     >
       <Tagname {...other}>{triggerElementContent}</Tagname>
