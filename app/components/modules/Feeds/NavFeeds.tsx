@@ -2,9 +2,9 @@ import styles from './popularNavFeeds.module.css';
 import buttonStyles from '@/elements/Button/button.module.css';
 import { DropdownArrowIcon, TrendingIcon } from '@/icons/index';
 import { Dropdown } from '@/shared/Dropdown';
-import PopularFeedsMenu from './PopularFeedsMenu';
+import PopularFeedsMenu from './FeedsMenu/FeedsMenu';
 
-export function PopularNavFeeds() {
+export function NavFeeds() {
   return (
     <div className={styles.popular_dropdown}>
       <Dropdown

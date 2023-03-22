@@ -45,13 +45,17 @@ export default function PopularFeedsMenu() {
             </>
           }
         >
-          <p>Valheim</p>
-          <p>Genshin</p>
-          <p>Halo</p>
+          {() => (
+            <>
+              <p>Valheim</p>
+              <p>Genshin</p>
+              <p>Halo</p>
+            </>
+          )}
         </Dropdown>
       </li>
       <li className={styles.list_item}>
-        <Dropdown
+        {/* <Dropdown
           triggerElementContent={
             <>
               <SportsIcon />
@@ -93,7 +97,7 @@ export default function PopularFeedsMenu() {
           <p>Henry Cavill</p>
           <p>Keanu Reeves</p>
           <p>Alexandra Daddario</p>
-        </Dropdown>
+        </Dropdown> */}
       </li>
     </ul>
   );

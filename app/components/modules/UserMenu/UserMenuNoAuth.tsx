@@ -1,5 +1,5 @@
 import { AdvertiseIcon, HelpIcon, LoginIcon, MoreIcon } from '@/icons/index';
-import { Dropdown } from '@/shared/Dropdown';
+// import { Dropdown } from '@/shared/Dropdown';
 import GenericList from '@/shared/GenericList/GenericList';
 
 import styles from './userMenu.module.css';
@@ -13,7 +13,7 @@ export default function UserMenuNoAuth() {
         <span>Help Center</span>
       </li>
       {/* <li className={styles.dropdown_item}> */}
-      <Dropdown
+      {/* <Dropdown
         As='li'
         nested
         className={styles.dropdown_item}
@@ -35,7 +35,7 @@ export default function UserMenuNoAuth() {
         <li key='3' className={styles.dropdown_item}>
           Reddit Blog
         </li>
-      </Dropdown>
+      </Dropdown> */}
       <li className={styles.dropdown_item}>
         <AdvertiseIcon />
         <span>Advertise on Reddit</span>

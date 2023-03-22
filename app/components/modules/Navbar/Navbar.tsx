@@ -1,7 +1,7 @@
 import SearchBar from '../../elements/SearchBar/SearchBar';
 import { LogoIcon } from '../../icons/LogoIcon';
 import { LogoTextIcon } from '../../icons/LogoTextIcon';
-import { PopularNavFeeds } from '../PopularNavFeeds/index';
+// import { PopularNavFeeds } from '../Feeds/index';
 import UserBlock from '../UserBlock/UserBlock';
 import styles from './navbar.module.css';
 
@@ -12,7 +12,7 @@ export default function Navbar() {
         <LogoIcon />
         <LogoTextIcon />
       </div>
-      <PopularNavFeeds />
+      {/* <PopularNavFeeds /> */}
       <SearchBar />
       <UserBlock />
       {/* 

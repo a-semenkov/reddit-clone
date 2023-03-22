@@ -27,7 +27,7 @@ export default function UserBlock() {
         Log in
       </Button>
 
-      <Dropdown
+      {/* <Dropdown
         As='button'
         data-dropdown
         className={ButtonStyles.button_element}
@@ -52,7 +52,7 @@ export default function UserBlock() {
         }
       >
         <UserMenuNoAuth />
-      </Dropdown>
+      </Dropdown> */}
     </div>
   );
 }

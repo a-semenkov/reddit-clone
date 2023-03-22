@@ -9,6 +9,7 @@ interface IListProps {
 
 interface IListOwnProps<E extends ElementType = ElementType> {
   list: Array<IListProps>;
+  renderItem: () => React.ReactNode;
   onClick?: (id: string) => void;
   As?: E;
 }
@@ -18,19 +19,20 @@ type IListGenericProps<E extends ElementType> = IListOwnProps<E> &
 
 const NOOP = () => {};
 
-function GenericList<E extends ElementType = 'div'>({
+function GenericList<E extends ElementType = 'li'>({
   list,
   As,
+  renderItem,
   onClick = NOOP,
   ...other
 }: IListGenericProps<E>) {
-  const TagName = As || 'div';
+  const TagName = As || 'li';
 
   return (
     <>
       {list.map((item) => (
         <TagName key={item.id} onClick={() => onClick(item.id)} {...other}>
-          {item.value}
+          {renderItem()}
         </TagName>
       ))}
     </>
