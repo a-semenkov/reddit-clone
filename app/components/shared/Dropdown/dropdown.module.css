@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.dropdown_trigger_btn {
+  width: 100%;
+}
+
 .backdrop {
   position: fixed;
   top: 0;

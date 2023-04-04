@@ -1,45 +1,63 @@
 import { AnimatePresence } from 'framer-motion';
-import useToggle from '@/hooks/useToggle';
+import { useToggle, useCombinedRef, useOutsideClick } from '@/hooks';
+
 import styles from './dropdown.module.css';
-import { ElementType, useEffect } from 'react';
-import { DropdownProps } from './dropdown.types';
+import { useCallback, useEffect, useRef } from 'react';
+import { DropdownButtonProps } from './dropdown.types';
 
 const NOOP = () => {};
-const defaultElement = 'button';
 
-export function Dropdown<E extends ElementType>({
-  As,
-  triggerElementContent,
+export function Dropdown({
+  buttonContent,
   children,
   nested,
   onOpen = NOOP,
   onClose = NOOP,
   ...other
-}: DropdownProps<E>) {
+}: DropdownButtonProps) {
   const [isDropdownOpen, toggleDropdown] = useToggle();
 
   useEffect(() => {
     isDropdownOpen ? onOpen() : onClose();
   }, [isDropdownOpen, onOpen, onClose]);
+  const dropdownMenuRef = useRef<HTMLElement | null>(null);
 
-  const handleDropdown = (target: Element) => {
-    if (!nested && target.getAttribute('data-static')) return;
+  const handleDropdown = useCallback(() => toggleDropdown(), [toggleDropdown]);
 
-    toggleDropdown();
+  const handleRef = (element: HTMLElement | null) => {
+    if (!element) return;
+    dropdownMenuRef.current = element;
   };
-  const Tagname = As || defaultElement;
-  return (
-    <div
-      role='button'
-      onClick={(e: React.SyntheticEvent<HTMLElement>) => {
-        e.target instanceof Element ? handleDropdown(e.target) : null;
-      }}
-      className={styles.container}
-    >
-      <Tagname {...other}>{triggerElementContent}</Tagname>
-      {isDropdownOpen && !nested && <div className={styles.backdrop} />}
 
-      <AnimatePresence>{isDropdownOpen && children}</AnimatePresence>
-    </div>
+  useOutsideClick(dropdownMenuRef, handleDropdown, isDropdownOpen);
+
+  const buttonProps = {
+    ...other,
+    className: `${styles.dropdown_trigger_btn} ${
+      'className' in other ? other.className || '' : ''
+    }`,
+  };
+
+  return (
+    <>
+      <button
+        type='button'
+        aria-controls={isDropdownOpen ? 'basic-menu' : undefined}
+        aria-haspopup='true'
+        aria-expanded={isDropdownOpen ? 'true' : undefined}
+        onClick={handleDropdown}
+        {...buttonProps}
+      >
+        {buttonContent}
+      </button>
+
+      <AnimatePresence>
+        {isDropdownOpen &&
+          children({
+            toggleDropdownMenu: handleDropdown,
+            ref: handleRef,
+          })}
+      </AnimatePresence>
+    </>
   );
 }
