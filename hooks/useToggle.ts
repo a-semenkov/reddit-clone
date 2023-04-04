@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function useToggle() {
+export function useToggle() {
   const [status, setStatus] = useState<boolean>(false);
   const toggleStatus = (bool: boolean | undefined = undefined): void => {
     if (typeof bool === 'boolean') {
@@ -12,5 +12,3 @@ function useToggle() {
 
   return [status, toggleStatus] as const;
 }
-
-export default useToggle;
